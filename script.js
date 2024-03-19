@@ -1,17 +1,17 @@
 const container = document.querySelector('#container');
 const btn = document.querySelector('#popup');
 
-function createGrid(rows, columns) {
-    for (let i = 0; i < rows; i++) {
-        let subDiv = document.createElement('div');
-        subDiv.classList.add('subDiv');
-        container.appendChild(subDiv);
-        for (let j = 0; j < columns; j++) {
+function createGrid(noOfRows, noOfColumns) {
+    for (let i = 0; i < noOfRows; i++) {
+        let row = document.createElement('div');
+        container.appendChild(row).className = 'row';
+
+        for (let j = 0; j < noOfColumns; j++) {
             let cell = document.createElement('div');
+            row.appendChild(cell).className = 'cell';
             cell.classList.add('hoverCell');
-            subDiv.appendChild(cell);
         }
-    }    
+    }
 }
 
 function removeAllChildNodes(parent) {
@@ -22,19 +22,16 @@ function removeAllChildNodes(parent) {
 
 function clickGrid() {
     removeAllChildNodes(container);
+    
+    let horizontal = Number(prompt('enter rows:'));
+    let vertical = Number(prompt('enter columns:'));
 
-    let rows = prompt('enter rows:');
-    let columns = prompt('enter columns:');
-
-    if (rows >= 100 || columns >= 100) {
-        rows = 99;
-        columns = 99;
-    } else {
-        rows = Number(rows);
-        columns = Number(columns);
+    if (horizontal >= 100 || vertical >= 100) {
+        horizontal = 99;
+        vertical = 99;
     }
 
-    createGrid(rows, columns);
+    createGrid(horizontal, vertical);
 }
 
-btn.addEventListener('click', clickGrid);
+btn.addEventListener('click', clickGrid)
