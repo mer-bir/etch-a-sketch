@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    border: 1px solid red;
+    width: 480px;
+    height: 480px;
+}
+
+.subDiv {
+    flex: 1;
+    border: 1px solid blue;
+}
+
+.subDiv>div {
+    border: 1px solid purple;
+}
+
+
+/*
+#container {
+    display: flex;
+    border: 1px solid red;
+    width: 480px;
+    height: 480px;
+}
+
+.subDiv {
+    flex: 1;
+    border: 1px solid blue;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.subDiv>div {
+    border: 1px solid blue;
+    width: auto;
+    height: auto;
+    flex: 1;
+}
+
+*/
+
+.hoverCell:hover {
+    background-color: aquamarine;
+}
